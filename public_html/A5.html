@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+  File:  /~achen/public_html/A2.html
+91.461 GUI Programming 1 Assignment 5:  JSON Text Formatting
+  Alex Chen, UMass Lowell Computer Science, alexander_chen@student.uml.edu
+  This is an introductory web page that has links to all other assignments.
+  Created by AC on October 6, 2015 at 12:52 PM
+-->
+
+<html>
+	<head>
+	    <meta charset="utf-8">
+            <link type="text/css" rel="stylesheet" href="A5stylesheet.css"/>
+	    <title>Formatting Dynamic Text Demonstration</title>	
+
+	    <!--
+  	    load jQuery library from the Google Content Delivery Network (CDN)
+  	    see http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
+  	    however, note that you obviously must be online for this to work
+  	    alternatively, you can download jQuery and store it locally from
+     	    http://jquery.com/download/
+	    -->
+
+	   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	   <!-- load the JSON file containing the text  -->
+	   <script type="text/javascript">
+               jQuery(document).ready( function() {
+               jQuery.get( "VivaLaVida-v2.7.9.json", function( data ) {
+      		  placeContent( data ) ;  
+               }, "json");
+             });
+           </script>
+
+           <!-- script to place JSON text in the placeholder on this page -->
+           <script type="text/javascript">
+          // N.B.  This version *does* apply the CSS.
+            function placeContent( story ) {
+              var strContent = "";
+
+    	      // create dynamic content from JSON
+    	      strContent += "<h1 class='title'>" + story.title + "</h1>" ;
+    	      strContent += "<h2 class='author'>by " + story.author + "</h2>" ;
+    	      strContent += "<h2 class='authorsTitle'>" + story.authorsTitle + "</h2>" ;
+    	      strContent += "<h3 class='date'>" + story.date + "</h3>" ;
+    	      strContent += "<h3 class='location'>" + story.location + "</h3>" ;
+
+    	      // loop through all the paragraphs and sentences
+    	      for ( var para = 0 ; para < story.text.paragraphs.length ; para++ ) {
+      	        strContent += "<p>" ;
+                for ( var sent = 0 ; sent < story.text.paragraphs[para].length ; sent++ ) {
+                  strContent += story.text.paragraphs[para][sent] + "&nbsp; " ;
+      	        }
+      	        strContent += "</p>" ;
+              }
+
+    	      // place dynamic content on page
+    	      // document.getElementById( "content" ).inerHTML = strContent;
+              jQuery("#content").html(strContent );
+            }
+          </script>
+        </head>
+        
+        <body>
+         
+          <!-- static content -->
+          <h1 id="h1a">Formatting Text Demonstration</h1>
+          
+          <img id="picture" src="VivaLaVida.jpg" alt="Album picture"/>
+
+          <!-- dynamic content -->
+          <div id="content"></div>
+     
+        </body> 
+     </html>

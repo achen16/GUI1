@@ -1,0 +1,57 @@
+/* 
+    Alexander Chen
+    CSS page for 91.461 GUI Programming 1 Assignment 2
+    Created on September 8th at 1:00 pm
+*/
+
+body {
+    background-color:LavenderBlush;
+}
+
+h1 {
+    color:yellow; 
+    text-align:center; 
+    background-color:blue;
+}
+
+img.profile {
+    margin:0px auto;
+    display:block;
+    height:auto;
+}
+
+span.bold {
+    font-weight: bold;
+}
+
+h2 {
+    color:indigo;
+}
+
+ol {
+    background-color:aqua;
+    width: 40%;
+}
+
+table, th, td{
+    background:lightgreen;
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    width: 60%;
+}
+
+span.green {
+    color:green;
+}
+
+img {
+    height:200px;
+}
+
+a {
+    text-decoration: none;
+    color:blue;
+}

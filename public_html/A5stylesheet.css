@@ -1,0 +1,88 @@
+/* 
+    Alexander Chen
+    CSS page for 91.461 GUI Programming 1 Assignment 5
+    alexander_chen@student.uml.edu
+    Created on Ocotber 6 at 4:00 pm
+*/
+
+/*main header properties */
+#h1a {
+  text-align:center;
+  font-weight:bold;
+  font-size:500%;
+  font-family:Arial;
+  color:purple;
+}
+
+/*change the background color */
+body {
+    background-color:darkgrey;
+}
+
+/*picture properties */
+#picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  width:400px;
+  height:300px;
+}
+
+/* major header properties */
+.title, .author, .authorsTitle {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-size: 150%;
+  margin: 0 0 0 0;
+}
+/*title change properties */
+.title {
+   color: red;
+}
+
+/*author change color */
+.author {
+   color:blue;
+}
+ /*authorsTitle change color */
+.authorsTitle {
+   color:white;
+}
+
+/*minor header properties */
+.date {
+   font-style:italic;
+   margin: 10px;
+}
+
+/* additional minor header properties */
+.location {
+    color:purple;
+    font-weight:bold;
+    margin: 20px;
+    font-family: Helvetica;
+    border: 1px dotted black;
+    width:15%;
+}
+
+/* changes the first letter of every paragraph */
+p:first-letter {
+  font-weight:bold;
+  font-family:Verdana;
+  float:left;
+  margin-right:1px;
+  font-style:italic;
+}
+
+/*every odd paragraph's first letter is red */
+p:nth-child(odd):first-letter {
+  color:red;
+}
+
+/*every even paragraph's first letter is blue */
+p:nth-child(even):first-letter {
+  color:blue;
+
+
+}
+   

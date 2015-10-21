@@ -1,0 +1,105 @@
+/* 
+    Alexander Chen
+    CSS page for 91.461 GUI Programming 1 Assignment 4
+    alexander_chen@student.uml.edu
+    Created on September 28th at 4:00 pm
+*/
+
+/*This changes the color of the background for the entire body/page */
+body {
+    background-color:LavenderBlush;
+}
+
+/* This changes the main title header on the page */
+h1 {
+    color:yellow; 
+    text-align:center; 
+    background-color:blue;
+}
+
+/* This formats my profile picture that I use under the title header */
+img.profile {
+    margin:0px auto;
+    display:block;
+    height:250px;
+    width:250px;
+}
+
+/*This changes the html logo image */
+#html {
+    position:absolute;
+    top:100px;
+    left:0px;
+}
+
+/*This modifies the W3C logo */
+img.w3c {
+    border:0;
+    width:88px;
+    height:31px;
+}
+
+/* this changes the span of class bold */
+span.bold {
+    font-weight: bold;
+    font-family:verdana;
+    color:#3300CC;
+}
+
+/* This changes the background of the about me header */
+h2 {
+    color:indigo;
+}
+
+/* This modifies the ordered list for about me */
+ol {
+    background-color:aqua;
+    color:red;
+    width: 40%;
+}
+
+/* This changes the table and the rows and columns of the table that I used for the assignments */
+table, th, td{
+    background:lightgreen;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/*This changes the h3 with the id courier, which is assignments */
+#courier {
+    font-family:courier new;
+}
+
+/*This changes the table width */
+table {
+    width: 60%;
+}
+
+/*This modifies the h3 class brown section for my hobbies */
+h3.brown {
+    color:brown;
+}
+
+/* This changes the unordred list for my hobbies */
+ul {
+    color:purple;
+}
+
+/* This changes the color of the spans with class green */
+span.green {
+    color:green;
+    font-family:arial;
+}
+
+/*This changes all images other than class profile */
+img {
+    height:200px;
+    width:225px;
+}
+
+/* This changes the hyperlinks in the code */
+a {
+    text-decoration:none;
+    color:blue;
+}
+

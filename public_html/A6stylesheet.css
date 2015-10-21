@@ -1,0 +1,103 @@
+/* 
+    Alexander Chen
+    Alexander_Chen@student.uml.edu
+    CSS sheet for Assignment 6
+*/
+
+/* properties for the body */
+body
+{
+  background-image: url("background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Image doesn't scroll with page */
+  position: relative;
+}
+
+/*properties for the form id, which is for the input table */
+#form
+{
+  position: relative;
+  margin-left: 25%;
+  margin-right: 20%;
+  border: 2px solid black;
+  background: LightSkyBlue;
+  padding: 6px;
+  color: purple;
+}
+
+/* margin for the entire div for the input area */
+#input
+{
+  margin-left: 10%;
+}
+
+/* the margin for the input boxes */
+#minCols,#maxCols,#minRows,#maxRows
+{
+  margin: 8px;
+}
+
+#minRows, #maxRows
+{
+  margin-left: 4.4%;
+}
+
+/* properties for the submit button */
+#submit
+{
+  margin-left: 40%;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+/* properties for the table id */
+#table
+{
+  position: relative;
+  margin-top: 50px;
+}
+
+/* properites for the table */
+table
+{
+  border: 10px solid blue;
+  margin: 0 40%;
+  font-size: 3em;
+  background-color: white;
+}
+
+/* properties for the first row/column 0 where there is no information */
+.empty
+{
+  background: orange;
+}
+
+/* properties for the first row where the input min to max is listed */
+.row0
+{
+  border-bottom: 5px solid orange;
+  border-right: 2px solid orange;
+}
+
+/* properties for the first column where the input min to max is listed */
+.col0
+{
+  border-right: 5px solid orange;
+  border-top: 2px solid orange
+}
+
+/* properties for the other rows and columns */
+.other
+{
+  border: 1px solid black;
+  margin: 0;
+}
+
+/* properties for the css validation logo */
+#validated
+{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

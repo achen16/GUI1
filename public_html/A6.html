@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+
+    <!--
+    File:  /~achen/public_html/A6.html
+    91.461 GUI Programming 1 Assignment 6:  Creating A Dynamic Table
+    Alex Chen, UMass Lowell Computer Science, alexander_chen@student.uml.edu
+    This is a dynamically created multiplication table. 
+    Created by AC on October 20, 2015 at 9:00 am
+-->
+
+    <title>
+      Creating a Dynamic Table
+    </title>
+    <link type="text/css" rel="stylesheet" href="A6stylesheet.css" >
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+      // This is the function multTable that creates a dynamic table. It also has validation checking 
+      
+function multTable() {
+        // Make sure that the inputs for the table are valid 
+        if ((input.minCols.value == "") || (input.maxCols.value == "") ||
+                (input.minRows.value == "") || (input.maxRows.value == "") ||
+                isNaN(input.minCols.value) || isNaN(input.maxCols.value) ||
+                isNaN(input.minRows.value) || isNaN(input.maxRows.value)) {
+          alert("Please enter valid values");
+          return false;
+        }
+
+        var minCols = parseInt(input.minCols.value); // Min number of columns
+        var maxCols = parseInt(input.maxCols.value); // Max number of columns
+        var minRows = parseInt(input.minRows.value); // Min number of rows
+        var maxRows = parseInt(input.maxRows.value); // Max number of rows
+
+        // Check to make sure that the maximum numbers are larger than the minumum values
+        if ((minCols > maxCols) || (minRows > maxRows)) {
+          alert("Maximum values must be larger than the minimum values");
+          return false;
+        }
+
+        // Calculate the number of rows and columns in the table
+        var numCols = maxCols - minCols;
+        var numRows = maxRows - minRows;
+
+        // Put the mulitpliers and multiplicands into arrays for indexing
+        var multipliers = new Array();
+        var multiplicands = new Array();
+
+        //array for multipliers (columns)
+        for (minCols; minCols <= maxCols; minCols++) {
+          multipliers.push(minCols);
+        }
+        for (minRows; minRows <= maxRows; minRows++) {
+          multiplicands.push(minRows);
+        }
+
+        // Remove the previously created table
+        //$("#table").empty();
+        
+        //variable tableMake is a string that will contain all of the code for the table
+        var tableMake = "";
+        tableMake += "<table>";
+        
+        //for loops that goes through the entered values and populates the correct numbers into the soon to be created table
+        //it makes rows and columns with the arrays created above and multiplies the values together in the correct spaces
+        for (var row = 0; row <= (numRows + 1); row++) {
+            tableMake += "<tr>";
+            for (var column = 0; column <= (numCols + 1); column++) {
+                if (row == 0 && column == 0) {
+                   tableMake += "<td class='empty'>" + "" + "</td>";
+                } else if (row == 0 && column > 0) {
+                   tableMake += "<td class='row0'>" + multipliers[column - 1] + "</td>";
+                } else if (column == 0 && row > 0) {
+                   tableMake += "<td class='col0'>" + multiplicands[row - 1] + "</td>";
+                } else {
+                   tableMake += "<td class='other'>" + (multipliers[column - 1] * multiplicands[row - 1]) + "</td>";
+                }
+            }
+            tableMake += "</tr>";
+        }
+        tableMake += "</table>";
+        
+        //makes all of the objects with id table a html object that is compised of the script in tableMake, which is the code for the table
+        $('#table').html(tableMake);
+
+               return true;
+    }
+    </script>
+  </head>
+  <body>
+
+    <!-- this creates the input variable table where the user can input numbers and calls the multTable function with onsubmit -->
+    <div id="form">
+      <form id="input" action="javascript:void(0)" method="GET" onsubmit="return multTable();">
+        Column Min: <input type="text" id="minCols" name="minCols">
+        Column Max: <input type="text" id="maxCols" name="maxCols"><br>
+        Row Min: <input type="text" id="minRows" name="minRows">
+        Row Max: <input type="text" id="maxRows" name="maxRows"><br>
+        <input type="submit" value="Submit" id="submit">
+      </form>
+    </div>
+    
+
+    <!-- This is where the table will be placed once generated. It also has the table id so the table will be created -->
+    <div id="table"></div>
+    
+    <!== html and css site validation -->
+    <div id="validated">
+      <p>s
+      </p>
+      <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+               src="http://jigsaw.w3.org/css-validator/images/vcss"
+               alt="Valid CSS!" />
+        </a>
+      </p>
+    </div>
+
+  </body>
+</html>

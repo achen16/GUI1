@@ -1,0 +1,31 @@
+{
+  "title" : "Viva La Vida" ,
+  "author" : "Coldplay" ,
+  "authorsTitle" : "Band" ,
+  "date" : "May 25, 2008" ,
+  "location" : "London, England" ,
+  "text" : {
+    "paragraphs" : [
+      [
+        "I used to rule the world, seas would rise when I gave the word. Now in the morning I sleep alone, sweep the streets I used to own.",
+	"I used to roll the dice, feel the fear in my enemy's eyes. Listen as the crowd would sing, now the old king is dead! Long live the king!"
+      ],
+      [
+	"One minute I held the key, next the walls were closed on me. And I discovered that my castles stand, upon pillars of salt and pillars of sand.",
+        "I hear Jerusalem bells are ringing, Roman Cavalry choirs are singing. Be my mirror, my sword and shield, my missionaries in a foreign field."
+      ],
+      [
+        "For some reason I can't explain, once you're gone there was never, never an honest word, but that was when I ruled the world.",
+        "It was the wicked and wild wind, blew down the doors to let me in. Shattered windows and the sound of drums, people couldn't believe what I'd become."
+      ],
+      [
+        "Revolutionaries wait for my head on a silver plate. Just a puppet on a lonely string, oh who would ever want to be king?",
+        "I hear Jerusalem bells are ringing, Roman Calvary choirs are singing. Be my mirror my sword and shield, my missionaries in a foreign field."
+      ],
+      [
+        "For some reason I can't explain, I know Saint Peter won't call my name.",
+        "Never an honest word, but that was when I ruled the world."
+      ]
+    ]
+  }
+}
