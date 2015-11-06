@@ -1,6 +1,14 @@
+/* 
+    Alexander Chen
+    Alexander_Chen@student.uml.edu
+    Javascript file for Assignment 7
+*/
+
+    /* This function does the validation */
     $(document).ready(function() {
 
-         /*greaterThan code found at
+         /*The greaterThan makes a function that validates that a value is greater than another. The same for lessThan but in reverse 
+         greaterThan code found at
          http://stackoverflow.com/questions/14347177/how-can-i-validate-that-the-max-field-is-greater-than-the-min-field
          Adds methods to be used in the rules section of the validate method below.*/
         $.validator.addMethod("greaterThan", /* name of method to be added */
@@ -25,6 +33,7 @@
                   return parseInt(value) < parseInt($max.val());
                 }, "Min must be less than max"); // end addMethod
 
+        /*Validate that tests if there is a value, sets a range, and makes sure that the min is less that the max */
         $('#input').validate({
           rules: {
             minCols: {
@@ -48,6 +57,8 @@
               greaterThan: "#minRows"
             }
           }, // end rules
+
+          /*messages for the errors */
           messages: {
             minCols: {
               required: "Please enter a min column value.",
