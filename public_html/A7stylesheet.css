@@ -1,7 +1,7 @@
 /* 
     Alexander Chen
     Alexander_Chen@student.uml.edu
-    CSS sheet for Assignment 6
+    CSS sheet for Assignment 7
 */
 
 /* properties for the body */
@@ -64,7 +64,7 @@ fieldset
   border : 2px solid red;
 }
 
-
+/*the position of the table using its placement div id */
 #table
 {
   position: absolute;
@@ -111,6 +111,5 @@ table
 #validated
 {
   position: relative;
-  bottom: 0 px;
   left: 10px;
 }
