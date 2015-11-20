@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+
+    <!--
+    File:  /~achen/public_html/A7.html
+    91.461 GUI Programming 1 Assignment 7:  Creating A Dynamic Table with Validation
+    Alex Chen, UMass Lowell Computer Science, alexander_chen@student.uml.edu
+    This is a dynamically created multiplication table. 
+    Created by AC on November 4, 2015 at 9:00 am
+-->
+
+    <title>
+      Creating a Dynamic Table
+    </title>
+
+    <!-- The css link -->
+    <link type="text/css" rel="stylesheet" href="A7stylesheet.css" >
+
+
+    <!-- The jquery library -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- The link to the javascript code in A7.js -->
+    <script type="text/javascript" src="A7.js"></script>
+
+    <!-- The jquery validation plugin -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+
+  </head>
+  <body>
+    <h2>Dynamic Table Generation with Validation</h2>
+
+    <!-- The table where values are entered. There are default values then the url can be used to get the inputed values -->
+    <fieldset>
+      <legend>Enter Values for Table</legend>
+      <form id="input" name="input" action="A7.html" method="GET" >
+        <p>
+          <label for="minCols">Column Min :</label>
+          <input type="text" id="minCols" name="minCols" value="0">
+        </p>
+        <p>
+          <label for="maxCols">Column Max :</label> 
+          <input type="text" id="maxCols" name="maxCols" value="1">
+        </p>
+        <p>
+          <label for="minRows">Row Min :</label>
+          <input type="text" id="minRows" name="minRows" value="0">
+        </p>
+        <p>
+          <label for="maxRows">Row Max :</label>
+          <input type="text" id="maxRows" name="maxRows" value="1">
+        </p>
+        <input type="submit" value="Submit" id="submit">
+      </form>
+    </fieldset>
+
+    <!-- This is where the table will be placed once generated. It also has the table id so the table will be created -->
+    <div id="table"></div>
+    
+    <!== html and css site validation -->
+    <div id="validated">
+      <p>s
+      </p>
+      <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+               src="http://jigsaw.w3.org/css-validator/images/vcss"
+               alt="Valid CSS!" />
+        </a>
+      </p>
+    </div>
+
+  </body>
+</html>
