@@ -1,7 +1,7 @@
 /* 
     Alexander Chen
     Alexander_Chen@student.uml.edu
-    Javascript file for Assignment 7
+    Javascript file for Assignment 8
 */
 
 var str = getField( strVarToInitialize ) ;
