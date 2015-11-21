@@ -4,6 +4,7 @@
     Javascript file for Assignment 8
 */
 
+//some of the following code was borrowed from Professor Heines to help with slider initialization
 var str = getField( strVarToInitialize ) ;
         if ( str !== null ) {
           var n = parseInt( str, 10 ) ;
@@ -12,11 +13,10 @@ var str = getField( strVarToInitialize ) ;
           }
         }
         
-        // added in Version 2
+        
         $( '#' + strVarToInitialize ).val( tblGenerator[ strVarToInitialize ] ) ;   
         
-        // added in Version 9 to initialize the sliders to the passed values
-        // updated by JMH on November 26, 2012 at 9:05 PM
+        
         var strSliderID = "#slider" + strVarToInitialize[0].toUpperCase()+strVarToInitialize.substr(1) ;
         $( strSliderID ).slider( "value", parseInt( str ) ) ;
         
@@ -26,14 +26,7 @@ var str = getField( strVarToInitialize ) ;
           $( strSliderID ).slider( "value", parseInt( $( '#' + strVarToInitialize ).val() ) ) ;
         } ) ;
         
-        // prevent text field from getting focus by trapping focus to the field
-        //    and instead switching focus to the A (anchor) tag in the slider DIV
-        // this technique was developed by examining the slider structure in the Firebug HTML tab
-        // also note that the text fields cannot be disabled, because if they are their values
-        //    are not passed when the form is submitted
-        // $( '#' + strVarToInitialize ).focus( function() {
-        //   $( strSliderID + " a" ).focus() ;
-        // } ) ;
+        
       } ,
 
       // get passed parameters
@@ -45,7 +38,7 @@ var str = getField( strVarToInitialize ) ;
       }
     } ;
 
-    var tblValidator = {   // added in Version 4
+    var tblValidator = {   
 
       // surround an erroneous error field with a red border
       highlightError : function( strVarToTest ) {
@@ -58,9 +51,7 @@ var str = getField( strVarToInitialize ) ;
         $( '#' + strVarToTest ).css( { "border" : "" } )  ;
       } ,
 
-      // check that a parameter exist, is not an empty string, and is not NaN
-      // this function is not used in Version 8 -- it is replaced by functionality 
-      //    in the Validation plugin
+    
       validateFormHelper : function( strVarToTest, strParamDesc ) {
         var str = $( '#' + strVarToTest ).val() ;
         if ( str === null ) {
@@ -77,31 +68,10 @@ var str = getField( strVarToInitialize ) ;
         return "OK" ;
       } ,
 
-      // called when the form is submitted to check the validity of each parameter
-      // this function is not used in Version 8 -- it is replaced by functionality 
-      //    in the Validation plugin
-      validateForm : function() {
-        // http://stackoverflow.com/questions/4079274/how-to-get-an-objects-properties-in-javascript-jquery
-        // var v = $('#frm').validate() ;
-        // for ( var key in v ) {
-        //   console.log( "key = " + key + ", value = " + v[key] ) ;
-        // }
-        
-        var str ;   // helper function return value
-        if ( ( str = tblValidator.validateFormHelper( "xBegin", "Minimum Column Value" ) ) !== "OK" ||
-             ( str = tblValidator.validateFormHelper( "xEnd"  , "Maximum Column Value" ) ) !== "OK" ||
-             ( str = tblValidator.validateFormHelper( "yBegin", "Minimum Row Value" ) ) !== "OK" ||
-             ( str = tblValidator.validateFormHelper( "yEnd"  , "Maximum Row Value" ) ) !== "OK" ) {
-          $('#msg').html( str ) ;
-          return false ;
-        }
-        return true ;
-      }
-
 
     /* This function does the validation */
     $(document).ready(function() {
-
+       //values for the sldiers
        var sliderOpts = {
           min : -10 ,
           max : 10 ,
