@@ -1,0 +1,115 @@
+/* 
+    Alexander Chen
+    Alexander_Chen@student.uml.edu
+    CSS sheet for Assignment 7
+*/
+
+/* properties for the body */
+body
+{
+  background-image: url("background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Image doesn't scroll with page */
+  position: relative;
+}
+
+h2 {
+   color: red;
+}
+
+fieldset 
+{
+  position : relative;
+  width : 175px;
+  border : 2px solid black;
+  font-family : Helvetica;
+  font-weight : bold;
+  color : #aaa;
+  background-color : #009;
+}
+
+/* margin for the entire div for the input area */
+#input
+{
+  margin-left: 4%;
+}
+
+/* the margin for the input boxes */
+#minCols,#maxCols,#minRows,#maxRows
+{
+  margin: 4px;
+}
+
+/* properties for the submit button */
+#submit
+{
+  margin-left: 20%;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+/* The following two CSS blocks found on pg. 300 of
+   "JavaScript & jQuery: The Missing Manual" */
+#input label.error
+{
+  color : #f00;
+  font-size : .8em;
+  font-weight : bold;
+  display : block;  /* Display's errors under fields */
+}
+/* border for the text boxes during an error */
+#input input.error, #input select.error
+{
+  border : 2px solid red;
+}
+
+/*the position of the table using its placement div id */
+#table
+{
+  position: absolute;
+  top: 61px;
+  left: 250px;
+}
+
+/* properites for the table */
+table
+{
+  border: 10px solid blue;
+  font-size: 3em;
+  background-color: white;
+}
+
+/* properties for the first row/column 0 where there is no information */
+.empty
+{
+  background: orange;
+}
+
+/* properties for the first row where the input min to max is listed */
+.row0
+{
+  border-bottom: 5px solid orange;
+  border-right: 2px solid orange;
+}
+
+/* properties for the first column where the input min to max is listed */
+.col0
+{
+  border-right: 5px solid orange;
+  border-top: 2px solid orange
+}
+
+/* properties for the other rows and columns */
+.other
+{
+  border: 1px solid black;
+  margin: 0;
+}
+
+/* properties for the css validation logo */
+#validated
+{
+  position: relative;
+  left: 10px;
+}
