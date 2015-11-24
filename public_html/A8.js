@@ -1,116 +1,27 @@
 /* 
     Alexander Chen
     Alexander_Chen@student.uml.edu
-    Javascript file for Assignment 7
+    Javascript file for Assignment 8
 */
 
-var str = getField( strVarToInitialize ) ;
-        if ( str !== null ) {
-          var n = parseInt( str, 10 ) ;
-          if ( ! isNaN( n ) ) {
-            tblGenerator[strVarToInitialize] = n ;
-          }
-        }
-        
-        // added in Version 2
-        $( '#' + strVarToInitialize ).val( tblGenerator[ strVarToInitialize ] ) ;   
-        
-        // added in Version 9 to initialize the sliders to the passed values
-        // updated by JMH on November 26, 2012 at 9:05 PM
-        var strSliderID = "#slider" + strVarToInitialize[0].toUpperCase()+strVarToInitialize.substr(1) ;
-        $( strSliderID ).slider( "value", parseInt( str ) ) ;
-        
-        // bind changes in text fields to sliders
-        $( '#' + strVarToInitialize ).blur( function() {
-          // console.log( '#' + strVarToInitialize + " lost focus, slider is " + strSliderID ) ;
-          $( strSliderID ).slider( "value", parseInt( $( '#' + strVarToInitialize ).val() ) ) ;
-        } ) ;
-        
-        // prevent text field from getting focus by trapping focus to the field
-        //    and instead switching focus to the A (anchor) tag in the slider DIV
-        // this technique was developed by examining the slider structure in the Firebug HTML tab
-        // also note that the text fields cannot be disabled, because if they are their values
-        //    are not passed when the form is submitted
-        // $( '#' + strVarToInitialize ).focus( function() {
-        //   $( strSliderID + " a" ).focus() ;
-        // } ) ;
-      } ,
-
-      // get passed parameters
-      "initialize" : function() {
-        tblInitializer.initializeHelper( "xBegin" ) ;
-        tblInitializer.initializeHelper( "xEnd" ) ;
-        tblInitializer.initializeHelper( "yBegin" ) ;
-        tblInitializer.initializeHelper( "yEnd" ) ;
-      }
-    } ;
-
-    var tblValidator = {   // added in Version 4
-
-      // surround an erroneous error field with a red border
-      highlightError : function( strVarToTest ) {
-        $( '#' + strVarToTest ).css( { "border" : "2px solid red" } )  ;
-        $( '#' + strVarToTest ).focus() ;
-      } ,
-
-      // remove the red border around an erroneous error field
-      unhighlightError : function( strVarToTest ) {
-        $( '#' + strVarToTest ).css( { "border" : "" } )  ;
-      } ,
-
-      // check that a parameter exist, is not an empty string, and is not NaN
-      // this function is not used in Version 8 -- it is replaced by functionality 
-      //    in the Validation plugin
-      validateFormHelper : function( strVarToTest, strParamDesc ) {
-        var str = $( '#' + strVarToTest ).val() ;
-        if ( str === null ) {
-          tblValidator.highlightError( strVarToTest ) ;
-          return strParamDesc + " does not exist." ;
-        } else if ( str === "" ) {
-          tblValidator.highlightError( strVarToTest ) ;
-          return strParamDesc + " was not supplied." ;
-        } else if ( isNaN( parseInt( str, 10 ) ) ) {
-          tblValidator.highlightError( strVarToTest ) ;
-          return strParamDesc + " is not a number." ;
-        }
-        $( '#' + strVarToTest ).css( { "border" : "" } )  ;
-        return "OK" ;
-      } ,
-
-      // called when the form is submitted to check the validity of each parameter
-      // this function is not used in Version 8 -- it is replaced by functionality 
-      //    in the Validation plugin
-      validateForm : function() {
-        // http://stackoverflow.com/questions/4079274/how-to-get-an-objects-properties-in-javascript-jquery
-        // var v = $('#frm').validate() ;
-        // for ( var key in v ) {
-        //   console.log( "key = " + key + ", value = " + v[key] ) ;
-        // }
-        
-        var str ;   // helper function return value
-        if ( ( str = tblValidator.validateFormHelper( "xBegin", "Minimum Column Value" ) ) !== "OK" ||
-             ( str = tblValidator.validateFormHelper( "xEnd"  , "Maximum Column Value" ) ) !== "OK" ||
-             ( str = tblValidator.validateFormHelper( "yBegin", "Minimum Row Value" ) ) !== "OK" ||
-             ( str = tblValidator.validateFormHelper( "yEnd"  , "Maximum Row Value" ) ) !== "OK" ) {
-          $('#msg').html( str ) ;
-          return false ;
-        }
-        return true ;
-      }
-
-
-    /* This function does the validation */
+    /* This function does the validation and sliders*/
     $(document).ready(function() {
 
        var sliderOpts = {
           min : -10 ,
           max : 10 ,
-          // value : 0 ,
-          slide : function( e, ui ) {
+           value : 0 ,
+           slide : function( e, ui ) {
           // set the input field value to the new slider value
           var strInputID = "#" + e.target.id.substr( 6, 1 ).toLowerCase() + e.target.id.substr( 7 ) ;
           $( strInputID ).val( ui.value ) ;
-        }
+          }
+       };
+
+         $('#sliderXBegin').slider( sliderOpts ) ;
+         $('#sliderXEnd').slider( sliderOpts ) ;
+         $('#sliderYBegin').slider( sliderOpts ) ;
+         $('#sliderYEnd').slider( sliderOpts ) ;
 
          /*The greaterThan makes a function that validates that a value is greater than another. The same for lessThan but in reverse 
          greaterThan code found at
