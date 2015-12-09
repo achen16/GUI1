@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--
+    File:  /~achen/public_html/A9.html
+    91.461 GUI Programming 1 Assignment 9:  Creating a Scrabble Board
+    Alex Chen, UMass Lowell Computer Science, alexander_chen@student.uml.edu
+    This is a scrabble board with turns and a running score count based on how the tiles are placed on the board 
+    Created by AC on December 4, 2015 at 9:00 am
+-->
+
+  <title>SCRABBLE</title>
+
+  <!-- The css files. Normalize is a MIT file that formats part of the board -->
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="A9stylesheet.css">
+
+  <!-- Various JavaScript and JQuery libraries -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="jquery-ui-1.11.4/jquery-ui.min.js"></script>
+  <script src="js/scrabble.js"></script>
+  <script src="js/scrabble-board.js"></script>
+  <script src="js/scrabble-hand.js"></script>
+</head>
+
+<!-- Some of the code in this file is credited to Anthony Salani's implementation of this assignment -->
+<!-- I used some of his implementation for a general structure of the layout of the board -->
+
+<body>
+
+<h2>Scabble</h2>
+<!--The placeholder divs for the board and the surrounding areas such as the tile hand -->
+<div id="outline">
+  <div id="board">
+    <div id="squares"></div>
+    <!-- Tiles placed on the board -->
+    <div id="placed-tiles"></div>
+    <!-- Tiles staged to be placed -->
+    <div id="staged-tiles"></div>
+  </div>
+  <div id="side-right">
+    <!-- button for ending the urn -->
+    <div id="commit-btn" class="center-btn">
+      <p>
+        End Turn
+      </p>
+    </div>
+    <!-- button for restarting -->
+    <div id="restart-btn" class="center-btn">
+      <p>
+        Restart
+      </p>
+    </div>
+    <!-- where to put the current word score or validation errors -->
+    <div id="current-score" class="center-hollow">
+      <p>
+        Current Score: 0
+      </p>
+    </div>
+    <!-- where to put the total score -->
+    <div id="total-score" class="center-hollow">
+      <p>
+        Total Score: 0
+      </p>
+    </div>
+    <!-- where to put the tile count -->
+    <div id="tile-count">
+    </div>
+  </div>
+  <div id="side-left">
+    <!-- tile rack hand -->
+  </div>
+</div>
+
+</body>
+</html>
